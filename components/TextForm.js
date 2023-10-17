@@ -54,13 +54,13 @@ import React, { useState } from 'react';
 
     }
     const copy = () => {
-        const textToCopy = text; // Get the text to copy from the state
-        const textArea = document.createElement('textarea');
-        textArea.value = textToCopy;
-        document.body.appendChild(textArea);
-        textArea.select();
-       
-        document.body.removeChild(textArea);
+        // Get the text to copy from the state
+        
+        var text = document.getElementById('mybox')
+        text.select();
+        text.setSelectionRange(0,9999);
+        navigator.clipboard.writeText(text.value);
+      
        
     };
         
